@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pisos y Deportes | Innovación bajo tus pies</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;family=Noto+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f27f0d",
+                        "background-dark": "#1A1A1A",
+                        "card-dark": "#242424",
+                        "border-dark": "#333333",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .glass-nav {
+            background: rgba(26, 26, 26, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .service-card:hover .overlay {
+            background: rgba(242, 127, 13, 0.9);
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 2px 2px 15px rgba(37, 211, 102, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white transition-colors duration-300">
+<a aria-label="WhatsApp" class="whatsapp-float" href="#">
+<svg class="size-8 fill-current" viewBox="0 0 24 24">
+<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217s.231.006.332.013c.105.007.25.013.391.357.144.354.491 1.2.534 1.288.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.101-.177.211-.077.383a5.256 5.256 0 00.85 1.054c.454.402.863.728 1.485 1.035.187.092.299.078.41-.05.11-.129.477-.556.604-.744.127-.188.254-.159.43-.092s1.111.524 1.303.62c.192.097.319.144.366.224.046.081.046.467-.098.872z"></path>
+<path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 21.105c-1.611 0-3.136-.42-4.464-1.155l-4.522 1.189 1.21-4.422c-.822-1.39-1.296-3.021-1.296-4.755 0-4.945 4.022-8.967 8.967-8.967 4.944 0 8.967 4.022 8.967 8.967s-4.023 8.967-9.062 8.967z"></path>
+</svg>
+</a>
+<nav class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-white/5">
+<div class="max-w-[1280px] mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">sports_basketball</span>
+</div>
+<h2 class="text-white text-xl font-extrabold tracking-tight uppercase">Pisos y Deportes</h2>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-white/80 hover:text-primary text-sm font-semibold transition-colors" href="#">Inicio</a>
+<a class="text-white/80 hover:text-primary text-sm font-semibold transition-colors" href="#servicios">Servicios</a>
+<a class="text-white/80 hover:text-primary text-sm font-semibold transition-colors" href="#proyectos">Portafolio</a>
+<a class="text-white/80 hover:text-primary text-sm font-semibold transition-colors" href="#nosotros">Nosotros</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg font-bold text-sm transition-all transform hover:scale-105 shadow-lg shadow-primary/20">
+                Cotizar Proyecto
+            </button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<section class="relative h-[85vh] w-full overflow-hidden">
+<div class="absolute inset-0">
+<div class="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/60 to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgOIz0xW6nKo5gKXrdJPtMEsjAK3LEsBMxuOiLINeLOIiZ8qHoaKjd_DhNlkELtKw4tNCvA8CS3QQv_0GMGy0GBwrn7uOW8RnsB-TjCB3Vy-191nFDSOhq9m9mAPJXqEFMINNgCOLsrC0YrU0-81ixc39ClMyPFjo5CZGOPsBuGpl7awnilsozoTUgy2G1Is5pRvK45CRgTiOYxk4JXhKh1U8ziEdoicvWQZcJWwald-9B8JIC_bry-QrFOC-RWOKs5VNEYama18Kh");'></div>
+</div>
+<div class="relative z-20 max-w-[1280px] mx-auto h-full flex flex-col justify-center px-6">
+<div class="max-w-2xl space-y-6">
+<span class="inline-block px-4 py-1 bg-primary text-white text-xs font-bold uppercase tracking-widest rounded">Líderes en México</span>
+<h1 class="text-white text-5xl md:text-7xl font-black leading-[1.1] tracking-tight">
+                    Innovación <span class="text-primary">bajo</span> tus pies
+                </h1>
+<p class="text-white/80 text-lg md:text-xl font-light leading-relaxed">
+                    Especialistas en superficies deportivas de alto rendimiento y áreas recreativas con tecnología de vanguardia y durabilidad extrema.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2 hover:bg-primary/90 transition-all group">
+                        Explorar Proyectos
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">
+                        Ver Materiales
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-primary py-12">
+<div class="max-w-[1280px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center text-white">
+<div class="text-4xl font-black mb-1">500+</div>
+<div class="text-sm font-medium opacity-90 uppercase tracking-tighter">Canchas Instaladas</div>
+</div>
+<div class="text-center text-white border-l border-white/20">
+<div class="text-4xl font-black mb-1">15+</div>
+<div class="text-sm font-medium opacity-90 uppercase tracking-tighter">Años Experiencia</div>
+</div>
+<div class="text-center text-white border-l border-white/20">
+<div class="text-4xl font-black mb-1">100k</div>
+<div class="text-sm font-medium opacity-90 uppercase tracking-tighter">m² de Superficie</div>
+</div>
+<div class="text-center text-white border-l border-white/20">
+<div class="text-4xl font-black mb-1">100%</div>
+<div class="text-sm font-medium opacity-90 uppercase tracking-tighter">Garantizado</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-background-dark" id="servicios">
+<div class="max-w-[1280px] mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="max-w-xl">
+<h2 class="text-primary font-bold text-sm uppercase tracking-widest mb-3">Nuestras Soluciones</h2>
+<h3 class="text-3xl md:text-5xl font-black text-white leading-tight">
+                        Especialistas en cada <br/>tipo de terreno
+                    </h3>
+</div>
+<p class="text-white/60 md:w-1/3 text-lg leading-relaxed">
+                    Ofrecemos recubrimientos especializados para cada disciplina, asegurando el máximo confort y seguridad para los usuarios.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="group relative h-[450px] overflow-hidden rounded-2xl cursor-pointer border border-white/5 bg-card-dark">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC9aTb90NB0ZpAjGXlVctKT4CWp0mGcK6v1y7UgAKp6v93d5o-zR-6Tml2l4js_Uy8aCtsq_4Y5IyZiRq4WunU2rMGVjfjinVJ8zDLHAwPh0VULUOuAsDYw7oNFL_coEB3pAHxqyWgMDtl8hSQopNcjx2Knaa7RWYDkfmk---EDI7NgWcNFQHhSCMsyq5daOQOBD-DvBENcQDYUEvhIK6e0hg4erdGRsn0DCbwXBFu2TPVov576zMkHqYDrc3WQTGqMgAbWwpEovEIR");'></div>
+<div class="overlay absolute inset-0 bg-black/50 transition-colors duration-300"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary text-5xl mb-4 group-hover:text-white transition-colors">sports_soccer</span>
+<h4 class="text-white text-2xl font-black mb-2">Canchas Multideportivas</h4>
+<p class="text-white/0 group-hover:text-white/90 transition-all duration-300 leading-tight text-sm">Diseños versátiles para basquetbol, voleibol y fútbol rápido con recubrimiento acrílico.</p>
+</div>
+</div>
+<div class="group relative h-[450px] overflow-hidden rounded-2xl cursor-pointer border border-white/5 bg-card-dark">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_BlG43TAf9Y2R96K6ApBDzL1vFhC7kvaJDZKddx4Se6D3CrMKhewfFb3rYCly61wj7LdtSt3idi5VslxV2ZX4eIHsHeEV0KbCe_GEHtP8mtNDMqooy4SoTROPSRBglBHfQ3ssKGHPWRr0RuUn4MQy2Q97IwZkB3oTH_GjffV7nPjdPgVwX8zlZ9caYi6319CmkzHcydcWgxVvZYk324t6fNV89zrCo4PYSKmH1Lh9FJSOpbciOGlSpn_fxYpfqXzMW3MaER0YZ4Ou");'></div>
+<div class="overlay absolute inset-0 bg-black/50 transition-colors duration-300"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary text-5xl mb-4 group-hover:text-white transition-colors">child_care</span>
+<h4 class="text-white text-2xl font-black mb-2">Áreas Infantiles</h4>
+<p class="text-white/0 group-hover:text-white/90 transition-all duration-300 leading-tight text-sm">Pisos amortiguantes de caucho EPDM que cumplen con normas internacionales de seguridad.</p>
+</div>
+</div>
+<div class="group relative h-[450px] overflow-hidden rounded-2xl cursor-pointer border border-white/5 bg-card-dark">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHIGfjSBG912rjAzgFjSbmi_0fUme_YyDdiO1WrkDaAKb8uIZoCMp7dZfswIQxL0XyAmxkvvbb9dRELCaGibKh3NT5ubTh9WUhNsfPBAUGGu69cdrwjrJLlo17Zw90BaleeZEfCx12IdCDDXywiXmiLAUapVHTds4nuSGGMxZo-S4rVId7HMG6QG8L4y2F8f36PkUXJAmX8Tz3z8xFq6hI4LLsl-7FfZolXZ7npLEkohN-NWP1WU6yTbJNtzNgMMwwnZbX6RZeUx8w");'></div>
+<div class="overlay absolute inset-0 bg-black/50 transition-colors duration-300"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary text-5xl mb-4 group-hover:text-white transition-colors">fitness_center</span>
+<h4 class="text-white text-2xl font-black mb-2">Gimnasios</h4>
+<p class="text-white/0 group-hover:text-white/90 transition-all duration-300 leading-tight text-sm">Superficies de alto tráfico resistentes a impactos y pesas de uso rudo profesional.</p>
+</div>
+</div>
+<div class="group relative h-[450px] overflow-hidden rounded-2xl cursor-pointer border border-white/5 bg-card-dark">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCCQwTZMde2FeGpp4jA1iSVrC173266GKmFAMAS_tB6G4GxkrqVKqX_HJEyoKa9Xn00MUCpBRhNXHKNANSVsPZT0nTzxASJWCuFMPv2IP08MXsYYC7QiKMNn8MRWpcKFLPNX6fnlH5rj6zti2RJ_dKxgy4sYKJQLTPoIOV0eNNWBXdqb3u6sGxuWDnUPusZtztVkuR_SpxguKqa8mk8-crys2MaCRF9ptzztMjxTI0YH-8Pq08u79JP-7gOuSVXgBwFzZtjd_csq0G4");'></div>
+<div class="overlay absolute inset-0 bg-black/50 transition-colors duration-300"></div>
+<div class="absolute inset-0 p-8 flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary text-5xl mb-4 group-hover:text-white transition-colors">directions_run</span>
+<h4 class="text-white text-2xl font-black mb-2">Pistas Atléticas</h4>
+<p class="text-white/0 group-hover:text-white/90 transition-all duration-300 leading-tight text-sm">Sistemas de poliuretano profesionales para pistas de trote y competencia oficial.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-card-dark" id="proyectos">
+<div class="max-w-[1280px] mx-auto px-6">
+<div class="text-center mb-12 space-y-4">
+<h2 class="text-primary font-bold text-sm uppercase tracking-widest">Nuestra Galería</h2>
+<h3 class="text-4xl md:text-5xl font-black text-white">Proyectos Destacados</h3>
+<div class="flex flex-wrap justify-center gap-4 mt-8">
+<button class="px-6 py-2 rounded-full bg-primary text-white font-bold text-sm transition-all">Todos</button>
+<button class="px-6 py-2 rounded-full bg-white/10 text-white font-bold text-sm hover:bg-primary/10 transition-all border border-transparent hover:border-primary/30">Deportes</button>
+<button class="px-6 py-2 rounded-full bg-white/10 text-white font-bold text-sm hover:bg-primary/10 transition-all border border-transparent hover:border-primary/30">Infantil</button>
+<button class="px-6 py-2 rounded-full bg-white/10 text-white font-bold text-sm hover:bg-primary/10 transition-all border border-transparent hover:border-primary/30">Gimnasios</button>
+</div>
+</div>
+<div class="columns-1 md:columns-2 lg:columns-3 gap-6">
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-[#1a1a1a] border border-white/10">
+<img class="w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAUH3YyVoRh1pqhxNbFQGvYJmMFsvRnUPgKD6aDkj-4oqUg_rh0tz7nkc0io0xz7w8h388d30hF-pGO73IH59K9b8oFdqUq3h6Q9zBjeNRGCyaDBqOG2bDcfCrKuygxUIF8qSfkB-ai2nA7Nhr2TU5QUAJO45ddjA9mrdzON40thAkrXGVEkO9UuXy-7ioM8cE1kPDP9-1606jICp_SccodKJbS59UctiASeGsvY85E6tr9WooTnWoQGwAwzKSL8KNMBaLufKvFNRf"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="text-white font-bold">Cancha de Tenis Profesional</p>
+<p class="text-white/70 text-sm">Polideportivo CDMX</p>
+</div>
+</div>
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-[#1a1a1a] border border-white/10">
+<img class="w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA8hrzPVY2ixb5FRxfQQ3c7c-qX-5MWT1_IPYpw4_Zf5mLA3zm-dQJQsujBB-81jQe87FxmdAh4RnHNhd3flpf-aabPPVpzeyL7eBSzN1tEE0PWxpkxiVoSCXVjmFDfAIFJ-tUkIB-bp-zMEdmlRBCO_YjIoAoSW3Z1BvWhmaDvZwoZV_ffqeGa7DdkXc7kG7tTzVTP7DWokYGT7h6MEyrxiHtu-ufxGL1j-Xxs7c9sZXuKgaL_nqc4cUHY74r_PDKwQspsCv3hjDZ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="text-white font-bold">Parque Central Infantil</p>
+<p class="text-white/70 text-sm">Querétaro</p>
+</div>
+</div>
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-[#1a1a1a] border border-white/10">
+<img class="w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4YY0cGbbZvgKseWkNzC_gAsQ8bIzPPbCKnGVyANxyCEm-2IWdGEcr-KybK_GcbSK6MqPImMVXUxBVrAFAkzGeTtdS33C4F7oN-PUO4S-uEyAThORUWCVBWaNhdvuQup4zYHtGquBlE6sj4Ngrc1_CxCqchCRK7ksLUL063sy09G2uyQV5D_B0tqc6RpIR76lhDItvo_2gyV2-RmaChgHKAerRc6jMhaKDoKYiyTa29SCd9I6VF4GT7G0rV9RThyBW4-jcEsk4khJg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="text-white font-bold">Crossfit Performance Center</p>
+<p class="text-white/70 text-sm">Monterrey</p>
+</div>
+</div>
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-[#1a1a1a] border border-white/10">
+<img class="w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpyd8tqFwuh9nb7k-nuT1DUsUsHK1Ah0Ja0ROdXERQkMs_nRt88e3GqHNwPsrbuy2G-DGgI0oWPsUtRwHSM7FgRbeD2tGoZlPOmhE--oEnLuY6qKpgbfqRaT1IHI3F2nL6Vt1QU-ELQyY_nnzkmahsR6GzqdpjjgMdhV9aKlQTOvJxpS6T80NRB1TKIFH8dX5koFqWqJYPFjJUF6djYOWRk1XZJGLlAq3kGC2BK1KG0dMoM6koFckjWjZMZFUwncmuHSJgOGw_x0vg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="text-white font-bold">Gimnasio Universitario</p>
+<p class="text-white/70 text-sm">Guadalajara</p>
+</div>
+</div>
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-[#1a1a1a] border border-white/10">
+<img class="w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjgkQWgbOexKQvXgyh8c13OXiarxaZGUE1C8EM2eTdFK52sGz82szjAEdO1clYmUZcPD9qO-numdffJNPfo88_PGrIrtRay3CX6UahVK4Y5VbgNRGwFx4nwuhbNqcmuB-rLKeGu3ghxGT0JvG9U_XjKJBGdMpqtn5KvTa0rfB2b-ze1YkT2-RZh9mKyYsyHa5g2yfLyXJJ8CrAIuxFXFyXikTDKDilzAKit6RsqV_vjuumt68aUC2Cnr53tlp87_UZXa0CIAaSq8pH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="text-white font-bold">Pista Olímpica Reforma</p>
+<p class="text-white/70 text-sm">CDMX</p>
+</div>
+</div>
+<div class="masonry-item group relative overflow-hidden rounded-xl bg-[#1a1a1a] border border-white/10">
+<img class="w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVL0o1sRc1NhgTPxQs-t5KFUGrRXUA4WH2gmTMbUtLkm8symi8qZJ8aWL6ZLkj2eJNah_7biEi_DMh7pfiuKvCoLI66USgSNQ3_ARnz2iGSkvxLYyLw-jaLHiamUvkRzd1b2G-fW1ExgbeLNTfEjp9GYXGUlcO2RZxrYbJ_3xCb9hD2vxj3no6IzMLPaoQmmamZeHggord5bTLMi0tjR7Lb6AeBPhv8tq08bRtgJWW_OEQedGiLrmKzhJ5Wtpwq2ukWaLNwb6l62tc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+<p class="text-white font-bold">Complejo Habitacional Las Águilas</p>
+<p class="text-white/70 text-sm">Puebla</p>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<button class="bg-primary/10 border-2 border-primary text-primary px-10 py-3 rounded-full font-black hover:bg-primary hover:text-white transition-all">
+                    Cargar más proyectos
+                </button>
+</div>
+</div>
+</section>
+<section class="py-24 bg-background-dark relative overflow-hidden border-y border-white/5">
+<div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-primary opacity-20 blur-[120px] rounded-full"></div>
+<div class="max-w-[1280px] mx-auto px-6 relative z-10">
+<div class="bg-card-dark border border-white/10 rounded-[2rem] p-10 md:p-20 flex flex-col lg:flex-row items-center gap-12 shadow-2xl">
+<div class="flex-1 text-center lg:text-left space-y-6">
+<h2 class="text-4xl md:text-6xl font-black text-white leading-tight">¿Listo para renovar tu superficie?</h2>
+<p class="text-white/70 text-xl max-w-xl">Desde residencias privadas hasta complejos olímpicos. Transforma tu espacio con expertos.</p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="bg-primary text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">mail</span>
+                            Solicitar Cotización
+                        </button>
+<button class="bg-white/5 text-white border border-white/10 px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">call</span>
+                            +52 (55) 1234 5678
+                        </button>
+</div>
+</div>
+<div class="w-full lg:w-1/3 bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-sm">
+<h3 class="text-white font-bold text-xl mb-6">Envíanos un mensaje rápido</h3>
+<form class="space-y-4">
+<input class="w-full bg-white/5 border-white/10 rounded-lg text-white placeholder:text-white/40 focus:ring-primary focus:border-primary" placeholder="Nombre completo" type="text"/>
+<input class="w-full bg-white/5 border-white/10 rounded-lg text-white placeholder:text-white/40 focus:ring-primary focus:border-primary" placeholder="Email corporativo" type="email"/>
+<select class="w-full bg-white/5 border-white/10 rounded-lg text-white focus:ring-primary focus:border-primary">
+<option class="bg-background-dark text-white" value="">Selecciona un servicio</option>
+<option class="bg-background-dark text-white" value="courts">Canchas</option>
+<option class="bg-background-dark text-white" value="kids">Áreas Infantiles</option>
+<option class="bg-background-dark text-white" value="gym">Gimnasio</option>
+</select>
+<button class="w-full bg-white text-background-dark font-black py-4 rounded-lg hover:bg-primary hover:text-white transition-all uppercase tracking-wider">
+                            Enviar Mensaje
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-background-dark py-20">
+<div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">sports_basketball</span>
+</div>
+<h2 class="text-white text-lg font-extrabold tracking-tight uppercase">Pisos y Deportes</h2>
+</div>
+<p class="text-white/60 text-sm leading-relaxed">
+                Líderes en el mercado de superficies deportivas y recreativas en México. Calidad, durabilidad y diseño moderno en cada instalación.
+            </p>
+<div class="flex gap-4">
+<a class="size-10 bg-white/5 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-xl">social_leaderboard</span>
+</a>
+<a class="size-10 bg-white/5 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-xl">photo_camera</span>
+</a>
+<a class="size-10 bg-white/5 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-xl">smart_display</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Navegación</h4>
+<ul class="space-y-4 text-sm font-medium text-white/60">
+<li><a class="hover:text-primary transition-colors" href="#">Inicio</a></li>
+<li><a class="hover:text-primary transition-colors" href="#servicios">Servicios</a></li>
+<li><a class="hover:text-primary transition-colors" href="#proyectos">Portafolio</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Preguntas Frecuentes</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Servicios</h4>
+<ul class="space-y-4 text-sm font-medium text-white/60">
+<li><a class="hover:text-primary transition-colors" href="#">Mantenimiento de Canchas</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Instalación de Pasto Sintético</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Superficies de Caucho</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Pisos para Gimnasio</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Ubicación</h4>
+<div class="space-y-4">
+<div class="flex gap-3 text-sm text-white/60">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span>Av. Insurgentes Sur 1234, Col. Del Valle, CDMX, 03100</span>
+</div>
+<div class="rounded-xl overflow-hidden h-32 grayscale hover:grayscale-0 border border-white/10 transition-all cursor-pointer">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg26MGa-7GPSiS2whAI0ihU9XoZ-5mkaKC3HldVh09KWrqxyQnxh-vw5f0qslx5puiDVA_CWDpsTeQupDuWEMNu4sBWoF7Il9BXPB2rYEURTiKWavFAV5bMS4dhy1v4EkQGC578Aco4NiSO0Pdcvm5o35YIzp_eJ81hukJofikLeKcQ7lAiJrChnOx0DXBpN3SEfrpg6jgj4iGzJj0GKRKkp7FEFYZ6AWUI7tyjObiCNcBDtIgb4u41397WWDWhDzK2YWcM_wDDHhK"/>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-6 mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-white/40">© 2024 Pisos y Deportes México. Todos los derechos reservados.</p>
+<div class="flex gap-6 text-xs text-white/40 font-medium">
+<a class="hover:text-primary transition-colors" href="#">Política de Privacidad</a>
+<a class="hover:text-primary transition-colors" href="#">Términos de Servicio</a>
+</div>
+</div>
+</footer>
+
+</body></html>
